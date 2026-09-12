@@ -1,7 +1,5 @@
 # G3R: Gaussian-based Geometry-Guided Reconstruction for Fetal Brain MRI
 
-> Project page under construction. Code, data, and pretrained models are not included in this repository yet.
-
 ## Overview
 
 G3R is a geometry-guided Gaussian reconstruction framework for recovering high-resolution 3D fetal brain MRI volumes from motion-corrupted 2D slices. It is designed to retain the fast reconstruction speed of Gaussian-based slice-to-volume reconstruction while improving structural stability in under-determined settings, including sparse-orientation and single-stack acquisitions.
@@ -25,14 +23,9 @@ In the experiments reported in the paper, G3R retains the reconstruction speed o
 
 Zhibao Cai, Yao Lv, Xin Zhang, and Chaoxiang Yang
 
-## Release status
+## Code
 
-- [ ] Paper link
-- [ ] Source code
-- [ ] Pretrained models
-- [ ] Example data and usage instructions
-
-More materials will be added after they are ready for release.
+Code is coming soon.
 
 ## Citation
 
