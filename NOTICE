@@ -1,0 +1,11 @@
+G3R: Gaussian-Based Geometry-Guided Reconstruction for Fetal Brain MRI
+Copyright 2026 Zhibao Cai, Yao Lv, Xin Zhang, and Chaoxiang Yang.
+
+The Gaussian reconstruction implementation is based on Gaussian Primitives for Fast SVR
+by the GSVR authors (https://github.com/m-dannecker/Gaussian-Primitives-for-Fast-SVR),
+licensed under Apache License 2.0. The G3R release adds the learned structural prior
+and the slice-wise registration interface.
+
+The vendored NeSVoR/SVoRT inference components are based on NeSVoR by Junshen Xu
+and contributors (https://github.com/daviddmc/NeSVoR), under the MIT License.
+Their license is retained in third_party/nesvor/LICENSE.

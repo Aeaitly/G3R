@@ -1,0 +1,60 @@
+# G3R single-stack reconstruction. Replace every input path.
+# max_epochs is the terminal epoch index: 500 runs epochs 0 through 500.
+# Stack thickness comes from each NIfTI header; masks may be [] when absent.
+# Single-stack reconstruction retains the original fixed prior weight of 5.0.
+experiment:
+  output_root: outputs
+data:
+  subjects:
+  - name: example_single_stack
+    enabled: true
+    input_stacks:
+    - /path/to/case_tra.nii.gz
+    input_masks:
+    - /path/to/case_tra_mask.nii.gz
+reconstruction:
+  spacing:
+  - 0.8
+  - 0.8
+  - 0.8
+  psf_scale_factor: 1.0
+model:
+  num_gaussians: 80000
+flags:
+  use_motion_correction: true
+  use_slice_scaling: true
+  use_slice_uncertainty: true
+  use_psf: true
+training:
+  max_epochs: 500
+  neighbors: 50
+  top_k_every: 20
+  svort_distillation:
+    single_stack_enabled: true
+    single_stack_lambda: 5.0
+    multi_stack_enabled: false
+    lambda_start: 0.5
+    lambda_end: 0.05
+    warmup_end: 300
+    decay_end: 500
+    samples: 4096
+  learning_rates:
+    position: 0.025
+    scaling: 0.025
+    rotation: 0.01
+    color: 0.01
+    motion_rot: 0.001
+    motion_trans: 0.1
+    slice_scale: 0.001
+    slice_weight: 0.001
+  loss_weights:
+    lambda_l2_scale: 0.05
+    log_scale_target: 0.5
+svort:
+  enable: true
+  save_volume: false
+  model_variant: v2
+  checkpoint_path: pretrained/g3r_v2.pt
+  use_prior: true
+  resolution_volume: 0.8
+  device: 0

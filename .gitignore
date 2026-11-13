@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+/build/
+/output/
+/outputs/
+/pretrained/*.pt
+/pretrained/*.pth
+/pretrained/*.download
+/third_party/nesvor/build/
